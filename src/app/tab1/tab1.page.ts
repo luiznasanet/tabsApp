@@ -8,9 +8,12 @@ import { ApiService } from '../services/api.service';
 })
 export class Tab1Page {
 
+  previsao = {} ;
+
   constructor(private api: ApiService) {
   this.api.buscarPrevisao().subscribe(dados => {
     console.log(dados);
+    this.previsao = dados;
   });
 
   }
